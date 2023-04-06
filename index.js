@@ -5,7 +5,10 @@ const {bookingRouter} = require("./routes/Booking.routes")
 const {authenticate} = require("./middlewares/authenticate.middleware")
 
 const app = express()
-
+const cors = require("cors")
+app.use(cors({
+    origin:"*"
+}))
 app.use(express.json())
 
 app.get("/",(req,res) => {
